@@ -5,7 +5,7 @@ var path = require('path');
 var youtubedl = require('youtube-dl');
 
 var search = "https://www.youtube.com/results?search_query=keerthichakra+songs";
-var url = "https://www.youtube.com/watch?v=1RWB7mFZQJU";
+var url = "https://www.youtube.com/watch?v=d9RJLn8GndQ";
 
 request(search, function (err, response, body) {
     if(err)
@@ -17,8 +17,8 @@ request(search, function (err, response, body) {
     var title=[];
     //console.log($('a#video-title.yt-simple-endpoint.style-scope.ytd-video-renderer'));
     $('h3.yt-lockup-title').each(function (i, elem) {
-        title[i] = $(this).text();
-        //console.log(elem);
+        var a = $(this).find('a').text();
+        //console.log(a.attr('href'));
     });
     //console.log(title);
 });
@@ -33,9 +33,10 @@ var video = youtubedl(url,
 var size = 0;
 video.on('info', function (info) {
     'use strict';
-    size = info.size;
-
-    console.log('Got video info');
+    size = parseInt(info.size);
+    size = size/1024;
+    console.log("Video: "+info._filename);
+    console.log("Size: "+size+"KB");
     var file = path.join(__dirname, info._filename);
     video.pipe(fs.createWriteStream(file));
 

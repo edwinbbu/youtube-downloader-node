@@ -11,3 +11,6 @@
 To change formats<br>
 640x360     - node app -f 360 video name      
 1280x720    - node app -f 720 video name<br>  
+
+To download audio<br>
+audio@128k m4a      - node app -a video name<br>

@@ -17,6 +17,9 @@ if(argv.f){
     else    //invalid format
         format=22;
 }
+if(argv.a){
+    format=140
+}
 myArgs=argv._;
 //console.log(myArgs);
 var search = '';
@@ -56,7 +59,13 @@ function download(url) {
         size = parseInt(info.size);
         var displaysize = size / (1024 * 1024);
         displaysize=displaysize.toFixed(2);
-        console.log("Video: " + info._filename);
+        if(format==140){
+            console.log("Audio: " + info._filename);
+        }
+        else{
+            console.log("Video: " + info._filename);
+        }
+        
         console.log("Size: " + displaysize + " MB");
         var file = path.join(__dirname + "/output", info._filename);
         video.pipe(fs.createWriteStream(file));

@@ -5,7 +5,7 @@
 <p>npm install</p></br>
 
 <h3>Running project</h3>
-<p> <b>node app video name<b> <br>
+<p> <b>node app video name</b> <br>
 720p video will be downloaded<br><br>  
 
 To change formats<br>

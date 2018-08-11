@@ -1,8 +1,10 @@
 # youtube-downloader-node
 <h3>Download youtube videos by just searching</h3><br>
 </br>
+<h3>Installation</h3>
 <p>npm install</p></br>
 
+<h3>Running project</h3>
 <p> node app video name <br>
 720p video will be downloaded<br><br>  
 

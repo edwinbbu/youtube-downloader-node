@@ -31,7 +31,7 @@ request(query, function (err, response, body) {
 function download(url) {
     var video = youtubedl(url,
         // Optional arguments passed to youtube-dl.
-        ['--format=18'],
+        ['--format=22'],
         // Additional options can be given for calling `child_process.execFile()`.
         { cwd: __dirname + "/output" });
 

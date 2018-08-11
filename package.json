@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "keywords": [
+    "youtube downloader",
+    "search and download",
+    "node youtube downloader",
+    "commandline downloader"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

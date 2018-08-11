@@ -1,5 +1,5 @@
 # youtube-downloader-node
-<h3>Download youtube videos by just searching<h3><br>
+<h3>Download youtube videos by just searching</h3><br>
 </br>
 <p>npm install</p></br>
 

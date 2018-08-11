@@ -4,7 +4,21 @@ var cheerio = require('cheerio');
 var path = require('path');
 var youtubedl = require('youtube-dl');
 
-var myArgs = process.argv.slice(2);
+//console.log(process.argv);
+var argv = require('minimist')(process.argv.slice(2));
+//console.log(argv);
+var format=22;
+if(argv.f){
+    let f=parseInt(argv.f);
+    if(f==360)
+        format=18;
+    else if(f==720)
+        format=22;
+    else    //invalid format
+        format=22;
+}
+myArgs=argv._;
+//console.log(myArgs);
 var search = '';
 for (var i = 0; i < myArgs.length; i++) {
     search = search + myArgs[i] + ' ';
@@ -31,7 +45,7 @@ request(query, function (err, response, body) {
 function download(url) {
     var video = youtubedl(url,
         // Optional arguments passed to youtube-dl.
-        ['--format=22'],
+        [`--format=${format}`],
         // Additional options can be given for calling `child_process.execFile()`.
         { cwd: __dirname + "/output" });
 
